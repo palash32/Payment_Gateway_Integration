@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,700&display=swap" rel="stylesheet">
+    <title>Payment Gateway</title>
+</head>
+<body>
+
+    <!-- Header begins -->
+
+
+    <section id="header">
+        <div class="header container">
+            <div class="nav-bar">
+                <div class="brand">
+                    <a href="#hero"><h1><span>Cancer</span> Welfare</h1></a>
+                </div>
+                <div class="nav-list">
+                    <div class="hamburger"><div class="bar"></div></div>
+                    <ul>
+                        <li><a href="#hero" data-after="Home">Home</a></li>
+
+
+                        <li><a href="#about" data-after="About">About</a></li>
+                        <li><a href="#contact" data-after="Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Header ends -->
+
+
+  <!-- Hero Section  -->
+    <section id="hero">
+
+        <div class="hero container">
+            <div>
+                <h1>Donate for others<span></span></h1>
+        <h1> for self <span></span></h1>
+
+
+        <a href="#about" class="cta">Donate now</a>
+
+
+    </section>
+
+  <!-- End Hero Section  -->
+
+
+  <!-- About Section -->
+
+  <section id="about">
+      <div class="about container">
+
+
+          <div class="col-right">
+              <h1 class="section-title">WE <span>ARE</span></h1>
+                <h2>A Non profit Organisation</h2>
+
+
+               <p>
+                Your support can help us in our mission to provide the best care for cancer patients. Every donation, no matter how small, can go a long way . You can make a donation in an amount that suits you directly to our bank account by clicking the button below or mail it to us if you prefer.
+
+               </p>
+
+
+               <form class="cta"><form>
+<form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_HTtTLS5JdjdOFB" async> </script> </form>
+<script>
+var options = {
+    "key": "rzp_test_3SiwNEd6m97xgQ", // Enter the Key ID generated from the Dashboard
+    "amount": "50000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "currency": "INR",
+    "name": "Palash Mishra",
+    "description": "Test Transaction",
+    "image": "https://example.com/your_logo",
+    "order_id": "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    "handler": function (response){
+        alert(response.razorpay_payment_id);
+        alert(response.razorpay_order_id);
+        alert(response.razorpay_signature)
+    },
+    "prefill": {
+        "name": "Gaurav Kumar",
+        "email": "gaurav.kumar@example.com",
+        "contact": "9999999999"
+    },
+    "notes": {
+        "address": "Razorpay Corporate Office"
+    },
+    "theme": {
+        "color": "#3399cc"
+    }
+};
+var rzp1 = new Razorpay(options);
+rzp1.on('payment.failed', function (response){
+        alert(response.error.code);
+        alert(response.error.description);
+        alert(response.error.source);
+        alert(response.error.step);
+        alert(response.error.reason);
+        alert(response.error.metadata.order_id);
+        alert(response.error.metadata.payment_id);
+});
+document.getElementById('rzp-button1').onclick = function(e){
+    rzp1.open();
+    e.preventDefault();
+}
+</script>
+
+            </div>
+      </div>
+  </section>
+  <!--End About Section -->
+
+
+  <!-- End Contact Section -->
+
+  <section id="contact">
+    <div class="contact container">
+       <div class="contact-form">
+         <h1>CONTACT US</h1>
+         <div class="txtb">
+           <label>Name : </label>
+           <input type="text" name="" value="" placeholder="Enter Your Name">
+          </div>
+
+          <div class="txtb">
+            <label>Email : </label>
+            <input type="email" name="" value="" placeholder="Enter Your Email">
+           </div>
+
+           <div class="txtb">
+            <label>Phone Number : </label>
+            <input type="text" name="" value="" placeholder="Enter Your Phone Number">
+           </div>
+
+           <div class="txtb">
+            <label>Message : </label>
+            <textarea></textarea>
+           </div>
+           <a class ="btn"> SUBMIT </a>
+        </div>
+      </div>
+    </div>
+</section>
+<!-- Contact Section -->
+
+
+    <!-- About Section -->
+
+    <section id="about">
+      <div class="about container">
+
+
+          <div class="col-right">
+              <h1 class="section-title">Project Made for </h1>
+              <h1 class="section-title"><span>THE SPARKS FOUNDATION</span></h1>
+
+              <h2 class="section-title">By Palash Mishra </h2>
+              <h2 class="section-title">Graduate Rotational Internship Program July 2021</h2>
+            </div>
+      </div>
+  </section>
+  <!--End About Section -->
+
+
+  <script src="./app.js"></script>
+</body>
+</html>
